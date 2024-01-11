@@ -5,7 +5,7 @@
 
   vars:
     username: your_username
-    password: '$6$rounds=10000$saltstring$hashedpassword'
+    password: 'Nksdfh$1234'
     # You can generate the hashed password using the `mkpasswd` command or use a password file.
 
   tasks:
