@@ -1,0 +1,12 @@
+---
+- name: adding multiple users
+  hosts: ansibleclients
+  tasks:
+    - name: Create multiple users
+      user:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - user1
+        - user2
+        - user3
