@@ -6,7 +6,7 @@
   vars:
     username: john2
     password: 'Nksdfh$1234'
-    # You can generate the hashed password using the `mkpasswd` command or use a password file.
+    become_password: 'Nkwen2021$'  # Add your become password here
 
   tasks:
     - name: Ensure user exists
@@ -14,4 +14,4 @@
         name: "{{ username }}"
         password: "{{ password | default(omit) }}"
         state: present
-
+      become_password: "{{ become_password }}"
