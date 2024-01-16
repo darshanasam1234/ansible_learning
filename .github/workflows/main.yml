@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Ansible
-        uses: ansible/ansible@v2
+        uses: ansible/ansible@v6
         with:
           ansible-version: '2.x'  # Use the appropriate version
 
