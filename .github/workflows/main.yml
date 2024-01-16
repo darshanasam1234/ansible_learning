@@ -1,0 +1,21 @@
+name: CI/CD with Ansible
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ansible
+        uses: geerlingguy/setup-ansible@v2
+        with:
+          ansible-version: '2.x'  # Use the appropriate version
+
+      - name: Run Ansible playbook
+        run: ansible-playbook adduser.yml
