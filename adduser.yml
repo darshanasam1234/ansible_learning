@@ -1,11 +1,18 @@
 ---
-- name: Create Norman user
-  hosts: all
+- name: Example Playbook with Sudo Password
+  hosts: ansibleclients
   become: yes
+  become_method: sudo
+  become_user: root
+
+  vars:
+    sudo_password: 'Nkwen2021$'
+
   tasks:
-  - name: Create Norman user
-    user:
-      name: norman
-      comment: "Norman User"
-      uid: 1003
-      state: present
+    - name: Ensure user exists
+      user:
+        name: john10
+        password: 'Nksdfh$1234'
+        state: present
+      become: yes
+      become_pass: "{{ sudo_password }}"
