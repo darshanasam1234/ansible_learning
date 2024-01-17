@@ -1,18 +1,13 @@
 ---
-- name: Example Playbook with Sudo Password
+- name: create a user
   hosts: ansibleclients
-  become: yes
-  become_method: sudo
-  become_user: root
-
-  vars:
-    sudo_password: 'Nkwen2021$'
-
+  become: true
   tasks:
-    - name: Ensure user exists
-      user:
-        name: john10
-        password: 'Nksdfh$1234'
-        state: present
-      become: yes
-      become_pass: "{{ sudo_password }}"
+  - name: create a user
+    ansible.builtin.user:
+      name: anton
+      comment: anton
+      uid: 1040
+    register: var
+  - name: output debug
+    debug: msg={{var}}
