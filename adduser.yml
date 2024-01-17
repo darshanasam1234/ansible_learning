@@ -3,7 +3,6 @@
   hosts: ansibleclients
   become: true
   become_user: root
-  become_pass: 'Nkwen2021$'
   tasks:
   - name: create a user
     ansible.builtin.user:
