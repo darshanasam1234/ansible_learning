@@ -2,7 +2,7 @@
 - name: create a user
   hosts: ansibleclients
   become: true
-  becom_pass: 'Nkwen2021$'
+  become_pass: 'Nkwen2021$'
   tasks:
   - name: create a user
     ansible.builtin.user:
