@@ -1,17 +1,11 @@
 ---
-- name: Create User
-  hosts: ansibleclients
-  become: yes  # Run tasks with sudo or become the root user
-
-  vars:
-    username: noman
-    password: 'Nksdfh$1234'
-    become_password: 'Nkwen2021$'  # Add your become password here
-
+- name: Create Norman user
+  hosts: all
+  become: yes
   tasks:
-    - name: Ensure user exists
-      user:
-        name: "{{ username }}"
-        password: "{{ password | default(omit) }}"
-        state: present
-      become_password: "{{ become_password }}"
+  - name: Create Norman user
+    user:
+      name: norman
+      comment: "Norman User"
+      uid: 1003
+      state: present
