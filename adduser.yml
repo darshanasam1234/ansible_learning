@@ -4,7 +4,7 @@
   become: yes  # Run tasks with sudo or become the root user
 
   vars:
-    username: john2
+    username: noman
     password: 'Nksdfh$1234'
     become_password: 'Nkwen2021$'  # Add your become password here
 
