@@ -8,7 +8,7 @@
     ansible.builtin.user:
       name: tom4
       comment: tom4
-      uid: 1040
+      uid: 1050
     register: var
   - name: output debug
     debug: msg={{var}}
