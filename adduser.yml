@@ -6,8 +6,8 @@
   tasks:
   - name: create a user
     ansible.builtin.user:
-      name: tom
-      comment: tom
+      name: tom2
+      comment: tom2
       uid: 1040
     register: var
   - name: output debug
