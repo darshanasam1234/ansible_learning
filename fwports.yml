@@ -7,7 +7,7 @@
    - name: enable ports on redhat
      when: "ansible_distribution == 'RedHat'"
      firewalld:
-        port: 997/tcp
+        port: 900/tcp
         permanent: true
         state: enabled
      notify: relaod firewalld
@@ -16,7 +16,7 @@
      when: "ansible_distribution == 'Ubuntu'"
      ufw:
       rule: allow
-      port: 997
+      port: 900
       proto: tcp
      notify: Reload ufw
 
