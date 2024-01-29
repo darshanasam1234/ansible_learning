@@ -1,0 +1,32 @@
+--- 
+- name: enable fw ports
+  hosts: allprod
+  become: yes
+
+  tasks:
+   - name: enable ports on redhat
+     when: "ansible_distribution == 'RedHat'"
+     firewalld:
+        ports: 80/tcp
+        permanent: yess
+        status: enabled
+     notify: 
+        - relaod firewalld
+
+   - name: enable ports on ubuntu
+     when: "ansible_distribution == 'Ubuntu'"
+     ufw:
+      rule: allow
+      port: 80/tcp
+     notify: Reload ufw
+
+  handlers:
+    - name: reload firewalld
+      services: 
+        name: firewalld
+        state: reloaded
+
+    - name: Reload ufw
+      services:
+        name: ufw
+        state: reloaded
