@@ -1,15 +1,10 @@
-name: CI/CD with Ansible
-on:
-  push:
-    branches:
-      - main
+name: Echo message
+
+on: push
+
 jobs:
-  deploy:
+  echo-message:
     runs-on: self-hosted
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Run Ansible playbook
-        run: |
-          echo " Creating a vm on centre"
-          ansible-playbook vmcreate.yml
+      - name: Echo message
+        run: echo Hello, world!
