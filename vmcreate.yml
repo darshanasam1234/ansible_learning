@@ -1,0 +1,18 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Clone the template
+    vmware_guest:
+      hostname: 192.168.1.171
+      username: administrator@vsphere.local
+      password: Nkwen2021$
+      validate_certs: False
+      name: testm10
+      template: vmtemplate
+      datacenter: pdc
+      folder: prodvms
+      state: poweredon
+      wait_for_ip_address: no
