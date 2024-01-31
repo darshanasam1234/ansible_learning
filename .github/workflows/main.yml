@@ -10,4 +10,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Run Ansible playbook
-        run: ansible-playbook vmcreate.yml
+        run: |
+          echo " Creating a vm on centre"
+          ansible-playbook vmcreate.yml
