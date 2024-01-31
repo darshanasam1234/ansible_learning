@@ -10,7 +10,7 @@
       username: administrator@vsphere.local
       password: Nkwen2021$
       validate_certs: False
-      name: testm10
+      name: testm12
       template: vmtemplate
       datacenter: pdc
       folder: prodvms
